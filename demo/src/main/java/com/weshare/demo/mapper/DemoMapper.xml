@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weshare.demo.dao.DemoDao">
+
+    <!--映射实体对象-->
+    <resultMap id="DemoResultMap" type="com.weshare.demo.model.Demo">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="number" column="number" />
+        <result property="insertTime" column="insert_time" />
+    </resultMap>
+
+    <insert id="addDemo" parameterType="Demo">
+        insert into demo(name, number,insert_time) values(#{name}, #{number},#{insertTime})
+    </insert>
+</mapper>
